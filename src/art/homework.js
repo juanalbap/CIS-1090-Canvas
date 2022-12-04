@@ -18,7 +18,7 @@ function shade(x, y, t) {
     //❓❓ Question 2
     //❓❓ Question 3
     //❓❓ Question 4
-    return [x,y,Math.sin(t)];
+    return [Math.sin(t),Math.cos(t),Math.tan(t)];
 }
 
 /**
@@ -28,11 +28,19 @@ function shade(x, y, t) {
  */
 function draw(ctx, t) {
     //See https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D
+    
+    
     ctx.lineWidth = 2;
     ctx.strokeStyle = 'black';
     //❓❓ Question 5
     //❓❓ Question 6
-    ctx.strokeRect(75, 100, 150 + 10*Math.sin(t), 100 + 10*Math.cos(t));
+    
+    ctx.strokeRect(50, 130, 75, 80*Math.cos(t));
+    ctx.strokeRect(50, 130, 75, -40*Math.cos(t));
+    ctx.strokeRect(125, 130, 75, 40*Math.cos(t));
+    ctx.strokeRect(125, 130, 75, -80*Math.cos(t));
+    
+
 }
 
 export default { name: "My Homework", shade, draw }
